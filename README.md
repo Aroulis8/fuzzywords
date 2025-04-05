@@ -2,11 +2,10 @@ fuzzywords is a go module that lets you "play around" with words. It includes a 
 
 # Functions
 
-## Fuzz
+## Fuzz(str string)
 Returns a random sentence made with the words from str
 
-Examples:
-_Results may be different due to the randomness of the function_
+_Results may/will be different due to the randomness of the function_
 
 ```go
 
@@ -19,7 +18,7 @@ fuzzywords.Fuzz("Hello World!")
 
 This function is better with big text
 
-## Reverse
+## Reverse(str string)
 Returns the string you gave it but reversed
 
 
@@ -28,4 +27,22 @@ fuzzywords.Reverse("Hello World!")
 
 //Returns:
 //!dlroW olleH
+```
+
+## RandomCharacters(n int)
+Returns a string of "n" random characters
+
+_Results may/will be different due to the randomness of the function_
+```go
+    fuzzywords.RandomCharacters(10)
+    //Returns:
+    //pxzczqlyzy
+```
+
+If you want it to only use specific characters, you can change randomCharactersSlice
+```go
+    randomCharactersSlice = []string {"a","b","c"}
+    fuzzywords.RandomCharacters(10)
+    //Returns:
+    //cbccbacbca
 ```
