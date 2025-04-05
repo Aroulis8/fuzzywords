@@ -1,6 +1,7 @@
 package fuzzywords
 
 import (
+	"strings"
 	"testing"
 )
 
@@ -26,12 +27,31 @@ func TestFuzz(t *testing.T) {
 }
 
 func TestRandomCharacters(t *testing.T) {
+	doesContainA := true
+	doesContainB := true
+	doesContainC := true
+	randomCharactersSlice = []string {"a","b","c"}
+
 	answer,err := RandomCharacters(10)
 
 	if len(answer) != 10 {
 		t.Errorf("the length of answer is not 10, it is %q", len(answer))
 	} else if err != nil {
 		t.Errorf("'err' is not nil")
+	}
+
+	if (!strings.Contains(answer,"a")) {
+		doesContainA = false
+	}
+	if (!strings.Contains(answer, "b")) {
+		doesContainB = false
+	}
+	if (!strings.Contains(answer, "c")) {
+		doesContainC = false
+	}
+
+	if (doesContainA == false && doesContainB == false && doesContainC == false) {
+		t.Error("answer does not contain any valid characters")
 	}
 
 	t.Logf("Answer: %q",answer)
