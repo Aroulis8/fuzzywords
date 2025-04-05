@@ -7,7 +7,10 @@ import (
 )
 
 //Returns a random sentence made with the words from str
-func Fuzz(str string) string{
+func Fuzz(str string) (string,error){
+	if strings.TrimSpace(str) == "" || str == "" {
+		return "nil",errors.New("empty string")
+	}
 	strSlice := strings.Split(str, " ")
 	strSliceLength := len(strSlice)
 	result := ""
@@ -15,7 +18,7 @@ func Fuzz(str string) string{
 		result += strSlice[rand.Intn(strSliceLength)] + " "
 	}
 
-	return result
+	return result,nil
 }
 
 //Returns str, but desrever(reversed)               
