@@ -1,7 +1,9 @@
-package fuzzywords
+package main
+
 import (
-	"strings"
+	"fmt"
 	"math/rand"
+	"strings"
 )
 
 //Returns a random sentence made with the words from str
@@ -13,5 +15,15 @@ func Fuzz(str string) string{
 		result += strSlice[rand.Intn(strSliceLength)] + " "
 	}
 
+	return result
+}
+
+//Returns str, but desrever(reversed)               
+func Reverse(str string) string {
+	strLength := len(str)
+	result := ""
+	for i := strLength - 1; i >= 0; i-- {
+		result += string(str[i])
+	}
 	return result
 }
