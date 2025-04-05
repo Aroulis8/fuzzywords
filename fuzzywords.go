@@ -1,4 +1,4 @@
-package main
+package fuzzywords
 
 import (
 	"math/rand"
