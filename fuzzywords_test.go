@@ -20,12 +20,12 @@ func TestReverse(t *testing.T) {
 
 func TestFuzz(t *testing.T) {
 
-	answer,err := Fuzz("Hello World And World World")
+	got,err := Fuzz("Hello World And World World")
 
 	if err != nil {
 		t.Errorf("error is not nill")
 	}
-	t.Logf("Answer: %q",answer)
+	t.Logf("Got: %q",got)
 }
 
 func TestRandomCharacters(t *testing.T) {
@@ -34,21 +34,21 @@ func TestRandomCharacters(t *testing.T) {
 	doesContainC := true
 	randomCharactersSlice = []string {"a","b","c"}
 
-	answer,err := RandomCharacters(10)
+	got,err := RandomCharacters(10)
 
-	if len(answer) != 10 {
-		t.Errorf("the length of answer is not 10, it is %q", len(answer))
+	if len(got) != 10 {
+		t.Errorf("the length of answer is not 10, it is %q", len(got))
 	} else if err != nil {
 		t.Errorf("'err' is not nil")
 	}
 
-	if (!strings.Contains(answer,"a")) {
+	if (!strings.Contains(got,"a")) {
 		doesContainA = false
 	}
-	if (!strings.Contains(answer, "b")) {
+	if (!strings.Contains(got, "b")) {
 		doesContainB = false
 	}
-	if (!strings.Contains(answer, "c")) {
+	if (!strings.Contains(got, "c")) {
 		doesContainC = false
 	}
 
@@ -56,7 +56,7 @@ func TestRandomCharacters(t *testing.T) {
 		t.Error("answer does not contain any valid characters")
 	}
 
-	t.Logf("Answer: %q",answer)
+	t.Logf("Got: %q",got)
 }
 
 func TestAddPrefix(t *testing.T) {
@@ -66,7 +66,7 @@ func TestAddPrefix(t *testing.T) {
 		t.Errorf("Wanted %q, got %q",want,got)
 	}
 
-	t.Logf("Answer %q", got)
+	t.Logf("Got: %q", got)
 }
 
 func TestAddSuffix(t *testing.T) {
