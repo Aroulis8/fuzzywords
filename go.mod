@@ -1,4 +1,4 @@
-module github.com/Aroulis8/fuzzywords
+module github.com/fuzzywords/v2
 
 go 1.24.1
 
