@@ -82,5 +82,7 @@ func TestGetStringData(t *testing.T) {
 			t.Errorf("Maps don't match \nGot:%v\nWant: %v",got,want)
 		}
 	}
+
+	t.Logf("Got: %v\n Want: %v",got,want)
 }
 
