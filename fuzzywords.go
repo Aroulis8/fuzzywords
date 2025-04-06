@@ -50,3 +50,13 @@ func RandomCharacters(n int) (string, error){
 	}
 	return result,nil
 }
+
+func AddPrefix(str string, prefix string) string{
+	strSlice := strings.Split(str," ")
+	result := ""
+	for i := 0; i < len(strSlice); i++ {
+		result += prefix + strSlice[i] + " "
+	}
+
+	return strings.TrimSpace(result)
+}
