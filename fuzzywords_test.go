@@ -67,3 +67,20 @@ func TestAddPrefix(t *testing.T) {
 	t.Logf("Answer %q", got)
 }
 
+func TestGetStringData(t *testing.T) {
+	got := GetStringData("Hello World")
+	want := map[string]int {
+		"words": 2,
+		"spaces": 1,
+		"characters":10,
+	}
+
+	for k,v := range want {
+		if (got[k] == v) {
+			continue
+		} else {
+			t.Errorf("Maps don't match \nGot:%v\nWant: %v",got,want)
+		}
+	}
+}
+

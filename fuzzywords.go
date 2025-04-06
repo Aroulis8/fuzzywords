@@ -60,3 +60,22 @@ func AddPrefix(str string, prefix string) string{
 
 	return strings.TrimSpace(result)
 }
+
+//Returns a map structured like this:
+//"words": 4
+//"spaces": 3
+//"characters": 21
+//Note that the spaces are subtracted from the characters
+func GetStringData(str string)	map[string]int {
+	words := len(strings.Split(str," "))
+	spaces := words - 1
+	characters := len(str) - spaces
+
+	result := map[string]int {
+		"words": words,
+		"spaces": spaces,
+		"characters": characters,
+	}
+
+	return result
+}
