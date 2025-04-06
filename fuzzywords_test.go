@@ -14,6 +14,8 @@ func TestReverse(t *testing.T) {
 	} else if err != nil {
 		t.Errorf("error is nill")
 	}
+
+	t.Logf("Got: %q",got)
 }
 
 func TestFuzz(t *testing.T) {
