@@ -2,23 +2,21 @@ fuzzywords is a go module that lets you "play around" with words. It includes a 
 
 # Functions
 
-## Fuzz(str string)
+## Fuzz(str string) string
 Returns a random sentence made with the words from str
 
-_Results may/will be different due to the randomness of the function_
+**_Results may/will be different due to the randomness of the function_**
 
 ```go
-
 fuzzywords.Fuzz("Hello World!")
 
 //Returns:
 //Hello Hello
-
 ```
 
 This function is better with big text
 
-## Reverse(str string)
+## Reverse(str string) string
 Returns the string you gave it but reversed
 
 
@@ -29,20 +27,47 @@ fuzzywords.Reverse("Hello World!")
 //!dlroW olleH
 ```
 
-## RandomCharacters(n int)
+## RandomCharacters(n int) string
 Returns a string of "n" random characters
 
-_Results may/will be different due to the randomness of the function_
+**_Results may/will be different due to the randomness of the function_**
 ```go
-    fuzzywords.RandomCharacters(10)
-    //Returns:
-    //pxzczqlyzy
+fuzzywords.RandomCharacters(10)
+//Returns:
+//pxzczqlyzy
 ```
 
 If you want it to only use specific characters, you can change randomCharactersSlice
 ```go
-    randomCharactersSlice = []string {"a","b","c"}
-    fuzzywords.RandomCharacters(10)
+randomCharactersSlice = []string {"a","b","c"}
+fuzzywords.RandomCharacters(10)
+//Returns:
+//cbccbacbca
+```
+
+## AddPrefix(str string, prefix string) string
+Adds a prefix to every word in "str"
+
+```go
+fuzzywords.AddPrefix("Hello World", "a")
+//This returns:
+//"aHello aWorld"
+```
+
+## AddSuffix(str string, suffix string) string
+Adds a suffix to every word in "str"
+
+```go
+fuzzywords.AddSuffix("Hello World", "a")
+//This returns:
+//"Helloa Worlda"
+```
+
+## GetStringData(str string) map[string]int
+Gets the amount of **words**, **spaces** and **characters**(without spaces) and returns all of it in a map.
+
+```go
+    fuzzywords.GetStringData("Hello World")
     //Returns:
-    //cbccbacbca
+    //map["words":2 "spaces":1 "characters:10"]
 ```
