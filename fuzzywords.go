@@ -61,6 +61,17 @@ func AddPrefix(str string, prefix string) string{
 	return strings.TrimSpace(result)
 }
 
+//Adds a suffix to every word in the string
+func AddSuffix(str string, suffix string) string{
+	strSlice := strings.Split(str," ")
+	result := ""
+	for i := 0; i < len(strSlice); i++ {
+		result +=  strSlice[i] + suffix +" "
+	}
+
+	return strings.TrimSpace(result)
+}
+
 //Returns a map structured like this:
 //"words": 4
 //"spaces": 3

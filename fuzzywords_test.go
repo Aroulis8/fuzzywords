@@ -67,6 +67,17 @@ func TestAddPrefix(t *testing.T) {
 	t.Logf("Answer %q", got)
 }
 
+func TestAddSuffix(t *testing.T) {
+	got := AddSuffix("Hello there", "I")
+	want := "HelloI thereI"
+
+	if got != want {
+		t.Errorf("Got: %q, wanted: %q",got,want)
+	}
+
+	t.Logf("Got: %q", got)
+}
+
 func TestGetStringData(t *testing.T) {
 	got := GetStringData("Hello World")
 	want := map[string]int {
