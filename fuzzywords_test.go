@@ -57,3 +57,13 @@ func TestRandomCharacters(t *testing.T) {
 	t.Logf("Answer: %q",answer)
 }
 
+func TestAddPrefix(t *testing.T) {
+	got := AddPrefix("Hello there","a")
+	want := "aHello athere"
+	if got != want {
+		t.Errorf("Wanted %q, got %q",want,got)
+	}
+
+	t.Logf("Answer %q", got)
+}
+
