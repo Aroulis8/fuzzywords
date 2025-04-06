@@ -6,13 +6,11 @@ import (
 )
 
 func TestReverse(t *testing.T) {
-	got,err := Reverse("Hello")
+	got := Reverse("Hello")
 	want := "olleH"
 
 	if got != want {
 		t.Errorf("Wanted %q, got %q",want,got)
-	} else if err != nil {
-		t.Errorf("error is nill")
 	}
 
 	t.Logf("Got: %q",got)
@@ -20,11 +18,7 @@ func TestReverse(t *testing.T) {
 
 func TestFuzz(t *testing.T) {
 
-	got,err := Fuzz("Hello World And World World")
-
-	if err != nil {
-		t.Errorf("error is not nill")
-	}
+	got := Fuzz("Hello World And World World")
 	t.Logf("Got: %q",got)
 }
 
@@ -34,12 +28,10 @@ func TestRandomCharacters(t *testing.T) {
 	doesContainC := true
 	randomCharactersSlice = []string {"a","b","c"}
 
-	got,err := RandomCharacters(10)
+	got := RandomCharacters(10)
 
 	if len(got) != 10 {
 		t.Errorf("the length of answer is not 10, it is %q", len(got))
-	} else if err != nil {
-		t.Errorf("'err' is not nil")
 	}
 
 	if (!strings.Contains(got,"a")) {
