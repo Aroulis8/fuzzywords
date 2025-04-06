@@ -16,12 +16,6 @@ func TestReverse(t *testing.T) {
 	t.Logf("Got: %q",got)
 }
 
-func TestFuzz(t *testing.T) {
-
-	got := Fuzz("Hello World And World World")
-	t.Logf("Got: %q",got)
-}
-
 func TestRandomCharacters(t *testing.T) {
 	doesContainA := true
 	doesContainB := true
