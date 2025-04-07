@@ -53,6 +53,7 @@ func RandomCharacters(n int) string{
 	return result
 }
 
+//Adds a prefix to every word in the string
 func AddPrefix(str string, prefix string) string{
 	strSlice := strings.Split(str," ")
 	result := ""
