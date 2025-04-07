@@ -71,3 +71,13 @@ Gets the amount of **words**, **spaces** and **characters**(without spaces) and 
     //Returns:
     //map["words":2 "spaces":1 "characters:10"]
 ```
+
+## CreateFuzzySentence(name string) string
+Creates a 'fuzzy'(weird) sentence using random words from **FuzzySentenceVerbs**, **FuzzySentenceObjects** and **FuzzySentencePlaces**
+It firsts adds the _name_, then the **verb**, next the **object**, and finally the **place**.
+
+```go
+fuzzywords.CreateFuzzySentence("Viss")
+//Returns:
+//Viss played with a parrot at home
+```

@@ -85,3 +85,16 @@ func TestGetStringData(t *testing.T) {
 	t.Logf("Got: %v\n Want: %v",got,want)
 }
 
+func TestFuzzySentence(t *testing.T) {
+	FuzzySentenceObjects = []string {"Aris"}
+	FuzzySentenceVerbs = []string {"killed"}
+	FuzzySentencePlaces = []string {"at home"}
+	got := CreateFuzzySentence("Viss")
+	want := "Viss killed Aris at home"
+
+	if got != want {
+		t.Errorf("Got %q, wanted %q", got, want)
+	}
+
+	t.Logf("Got %q", got)
+}

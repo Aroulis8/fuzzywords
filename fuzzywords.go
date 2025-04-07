@@ -6,7 +6,12 @@ import (
 )
 var RandomCharactersSlice = []string {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
 
+var FuzzySentenceVerbs = []string {"played with","killed","had a bath with"}
+var FuzzySentenceObjects = []string {"a parrot","a spaceship","a board game", "Mark"}
+var FuzzySentencePlaces = []string {"at home","in the jungle"}
+
 //Returns a random sentence made with the words from str
+//Deprecated: This function is not useful
 func Fuzz(str string) string{
 	if strings.TrimSpace(str) == "" || str == "" {
 		return "nil"
@@ -86,4 +91,11 @@ func GetStringData(str string)	map[string]int {
 	}
 
 	return result
+}
+
+func CreateFuzzySentence(name string) string {
+	fuzzyVerb := FuzzySentenceVerbs[rand.Intn(len(FuzzySentenceVerbs))]
+	fuzzyObject := FuzzySentenceObjects[rand.Intn(len(FuzzySentenceObjects))]
+	fuzzyPlace := FuzzySentencePlaces[rand.Intn(len(FuzzySentencePlaces))]
+	return name + " " + fuzzyVerb + " " + fuzzyObject + " " + fuzzyPlace
 }
