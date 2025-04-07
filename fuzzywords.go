@@ -6,7 +6,7 @@ import (
 )
 
 
-var randomCharactersSlice = []string {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+ var RandomCharactersSlice = []string {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
 
 //Returns a random sentence made with the words from str
 func Fuzz(str string) string{
@@ -45,7 +45,7 @@ func RandomCharacters(n int) string{
 	}
 	result := ""
 	for i := 0;i < n; i++ {
-		result += randomCharactersSlice[rand.Intn(len(randomCharactersSlice))]
+		result += RandomCharactersSlice[rand.Intn(len(RandomCharactersSlice))]
 	}
 	return result
 }

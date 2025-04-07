@@ -20,7 +20,7 @@ func TestRandomCharacters(t *testing.T) {
 	doesContainA := true
 	doesContainB := true
 	doesContainC := true
-	randomCharactersSlice = []string {"a","b","c"}
+	RandomCharactersSlice = []string {"a","b","c"}
 
 	got := RandomCharacters(10)
 
