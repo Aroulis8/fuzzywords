@@ -1,8 +1,9 @@
-fuzzywords is a go module that lets you "play around" with words. It includes a variety (I hope!) of functions that let you do exactly that. 
+fuzzywords is a go module that lets you "play around" with words. It includes a variety (I hope!) of functions that let you do exactly that.
 
 # Functions
 
 ## Fuzz(str string) string
+
 Returns a random sentence made with the words from str
 
 **_Results may/will be different due to the randomness of the function_**
@@ -17,6 +18,7 @@ fuzzywords.Fuzz("Hello World!")
 This function is better with big text
 
 ## Reverse(str string) string
+
 Returns the string you gave it but reversed
 (Thanks to u/Alternative-Ad-5902 for the code!)
 
@@ -28,9 +30,11 @@ fuzzywords.Reverse("Hello World!")
 ```
 
 ## RandomCharacters(n int) string
+
 Returns a string of "n" random characters
 
 **_Results may/will be different due to the randomness of the function_**
+
 ```go
 fuzzywords.RandomCharacters(10)
 //Returns:
@@ -38,6 +42,7 @@ fuzzywords.RandomCharacters(10)
 ```
 
 If you want it to only use specific characters, you can change randomCharactersSlice
+
 ```go
 randomCharactersSlice = []string {"a","b","c"}
 fuzzywords.RandomCharacters(10)
@@ -46,6 +51,7 @@ fuzzywords.RandomCharacters(10)
 ```
 
 ## AddPrefix(str string, prefix string) string
+
 Adds a prefix to every word in "str"
 
 ```go
@@ -55,6 +61,7 @@ fuzzywords.AddPrefix("Hello World", "a")
 ```
 
 ## AddSuffix(str string, suffix string) string
+
 Adds a suffix to every word in "str"
 
 ```go
@@ -64,6 +71,7 @@ fuzzywords.AddSuffix("Hello World", "a")
 ```
 
 ## GetStringData(str string) map[string]int
+
 Gets the amount of **words**, **spaces** and **characters**(without spaces) and returns all of it in a StringData.
 
 ```go
@@ -73,6 +81,7 @@ Gets the amount of **words**, **spaces** and **characters**(without spaces) and 
 ```
 
 ## CreateFuzzySentence(name string) string
+
 Creates a 'fuzzy'(weird) sentence using random words from **FuzzySentenceVerbs**, **FuzzySentenceObjects** and **FuzzySentencePlaces**
 It firsts adds the _name_, then the **verb**, next the **object**, and finally the **place**.
 
