@@ -18,7 +18,7 @@ This function is better with big text
 
 ## Reverse(str string) string
 Returns the string you gave it but reversed
-
+(Thanks to u/Alternative-Ad-5902 for the code!)
 
 ```go
 fuzzywords.Reverse("Hello World!")
@@ -64,12 +64,12 @@ fuzzywords.AddSuffix("Hello World", "a")
 ```
 
 ## GetStringData(str string) map[string]int
-Gets the amount of **words**, **spaces** and **characters**(without spaces) and returns all of it in a map.
+Gets the amount of **words**, **spaces** and **characters**(without spaces) and returns all of it in a StringData.
 
 ```go
     fuzzywords.GetStringData("Hello World")
     //Returns:
-    //map["words":2 "spaces":1 "characters:10"]
+    //{2 10 1}
 ```
 
 ## CreateFuzzySentence(name string) string

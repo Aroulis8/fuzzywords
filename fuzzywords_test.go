@@ -68,18 +68,13 @@ func TestAddSuffix(t *testing.T) {
 
 func TestGetStringData(t *testing.T) {
 	got := GetStringData("Hello World")
-	want := map[string]int {
-		"words": 2,
-		"spaces": 1,
-		"characters":10,
-	}
+	var want StringData
+	want.spaces = 1
+	want.characters = 10
+	want.words = 2
 
-	for k,v := range want {
-		if (got[k] == v) {
-			continue
-		} else {
-			t.Errorf("Maps don't match \nGot:%v\nWant: %v",got,want)
-		}
+	if got != want {
+		t.Errorf("Got %q, wanted %q",got, want)
 	}
 
 	t.Logf("Got: %v\n Want: %v",got,want)

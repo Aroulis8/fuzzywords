@@ -3,6 +3,7 @@ package fuzzywords
 import (
 	"math/rand"
 	"strings"
+	"slices"
 )
 var RandomCharactersSlice = []string {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
 
@@ -26,18 +27,16 @@ func Fuzz(str string) string{
 	return result
 }
 
-//Returns str, but desrever(reversed)               
+//Returns str, but desrever(reversed)
+//Code by: u/Alternative-Ad-5902                
 func Reverse(str string) string {
 	if strings.TrimSpace(str) == "" || str == "" {
 		return "nil"
 	}
 
-	strLength := len(str)
-	result := ""
-	for i := strLength - 1; i >= 0; i-- {
-		result += string(str[i])
-	}
-	return result
+	chars := []rune(str)
+    slices.Reverse(chars)
+    return string(chars)
 }
 
 //Returns a string of "n" random characters.
@@ -75,21 +74,17 @@ func AddSuffix(str string, suffix string) string{
 	return strings.TrimSpace(result)
 }
 
-//Returns a map structured like this:
-//"words": 4
-//"spaces": 3
-//"characters": 21
+//Returns a StringData
 //Note that the spaces are subtracted from the characters
-func GetStringData(str string)	map[string]int {
+func GetStringData(str string)	StringData {
 	words := len(strings.Split(str," "))
 	spaces := words - 1
 	characters := len(str) - spaces
 
-	result := map[string]int {
-		"words": words,
-		"spaces": spaces,
-		"characters": characters,
-	}
+	var result StringData
+	result.words = words
+	result.spaces = spaces
+	result.characters = characters
 
 	return result
 }
