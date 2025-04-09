@@ -20,7 +20,7 @@ This function is better with big text
 ## Reverse(str string) string
 
 Returns the string you gave it but reversed
-(Thanks to u/Alternative-Ad-5902 for the code!)
+(Thanks to [u/Alternative-Ad-5902](https://www.reddit.com/user/Alternative-Ad-5902/) for the code!)
 
 ```go
 fuzzywords.Reverse("Hello World!")
@@ -70,10 +70,10 @@ fuzzywords.AddSuffix("Hello World", "a")
 //"Helloa Worlda"
 ```
 
-## GetStringData(str string) map[string]int
+## GetStringData(str string) DataString
 
 Gets the amount of **words**, **spaces** and **characters**(without spaces) and returns all of it in a StringData.
-
+(Thanks to [u/Alternative-Ad-5902](https://www.reddit.com/user/Alternative-Ad-5902/) for suggesting me to change the function so it returns a custom struct!)
 ```go
     fuzzywords.GetStringData("Hello World")
     //Returns:
@@ -90,3 +90,4 @@ fuzzywords.CreateFuzzySentence("Viss")
 //Returns:
 //Viss played with a parrot at home
 ```
+
